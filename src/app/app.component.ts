@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalStateService } from './services/global-state.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  showMenu=false
+  constructor(private GlobalStateService:GlobalStateService) {
+    this.GlobalStateService.listenUsr.subscribe(  x=>{
+      this.showMenu=!!x
+    })
+  }
 }
