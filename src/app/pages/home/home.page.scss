@@ -22,3 +22,28 @@ form{
         padding: 10%;
         // margin: auto;
 }
+#container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 15px;
+    line-height: 16px;
+  }
+  
+  #container p {
+    font-size: 10px;
+    line-height: 16px;
+    margin-left: 5%;
+    margin-top: 11%;
+    color: #8c8c8c;
+    float:left,
+  }
+  
+  #container a {
+    text-decoration: none;
+  }

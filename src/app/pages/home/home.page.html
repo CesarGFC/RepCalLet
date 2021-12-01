@@ -1,25 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="auth-form">
   <ion-img id="logo" src="assets/icon/ReparacionLetys.jpg"></ion-img>
   <ion-row>
       <ion-col>
-
-          <form>
+          <form [formGroup]="form">
             <ion-item lines="full">
               <ion-label position="floating"><ion-icon [name]="'person'"></ion-icon></ion-label>
-              <ion-input type="text" required></ion-input>
+              <ion-input type="text" formControlName = "user"></ion-input>
             </ion-item>
         
             <ion-item lines="full">
               <ion-label position="floating"><ion-icon [name]="'key'"></ion-icon></ion-label>
-              <ion-input type="password" required></ion-input>
+              <ion-input type="password" formControlName = "password"></ion-input>
             </ion-item>
         
             <ion-row>
@@ -40,9 +37,11 @@
       <ion-footer>
         <ion-toolbar>
           <ion-title>
-          <ion-icon class="icons" [name]="'logo-facebook'"></ion-icon>
-          <ion-icon class="icons" [name]="'logo-instagram'"></ion-icon>
-          </ion-title>
+            <div contentId="container">
+                <p>Síguenos en</p>
+          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-facebook'"></ion-icon></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-instagram'"></ion-icon></a>
+          </div>  
+        </ion-title>
         </ion-toolbar>
       </ion-footer>
->

@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalStateService {
   private localStorage = window.localStorage
-  public listenUsr = new BehaviorSubject('')
+  public _userSession = new BehaviorSubject('')
   constructor() {  
   }
-  getSession(){
-    return this.localStorage.getItem('token')
+  get asObservable():Observable<string>{ 
+    return this._userSession.asObservable()
   }
-  setSession(value){
-    this.listenUsr.next(value)
-    return this.localStorage.setItem('token', value)
+  get userSession():string{
+    return this._userSession.getValue()
   }
-
-
+  set userSession(user:string){
+    if(user){
+      this.localStorage.setItem("token",user)
+    }else{
+      this.localStorage.removeItem("token")
+    }
+    this._userSession.next(user)
+  }
 }
