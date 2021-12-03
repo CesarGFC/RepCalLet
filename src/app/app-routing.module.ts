@@ -26,14 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then( m => m.PagesPageModule)
-  },
-  {
-    path: 'empleados',
-    loadChildren: () => import('./app/pages/empleados/empleados.module').then( m => m.EmpleadosPageModule)
-  },
-  {
     path: 'empleados',
     loadChildren: () => import('./pages/empleados/empleados.module').then( m => m.EmpleadosPageModule)
   },

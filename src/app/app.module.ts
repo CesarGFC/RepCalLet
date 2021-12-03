@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { RootComponent } from './app/root.component';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,24 +13,25 @@ import { ForgotPasswordPage } from './pages/forgot-password/forgot-password.page
 import { TabsPageModule } from './tabs/tabs.module';
 import { NotificationsPageModule } from './pages/notifications/notifications.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationPage,
     ForgotPasswordPage,
-    RootComponent
   ],
   entryComponents: [
   ],
   imports: [
     BrowserModule, 
-    IonicModule.forRoot(), 
+    IonicModule.forRoot(),
+    HttpClientModule, 
     AppRoutingModule,
     FormsModule,
     TabsPageModule],
     providers: [{ provide: RouteReuseStrategy, 
                 useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent, RootComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
