@@ -6,11 +6,11 @@ import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
   providers: [ LoginService ]
 })
-export class HomePage implements OnInit {
+export class LoginPage implements OnInit {
   form:FormGroup;
 
   constructor(private globalStateService: GlobalStateService, private Router:Router, private LoginService:LoginService) { 

@@ -17,8 +17,7 @@ export class AppComponent {
   }
   logout(){
     this.GlobalStateService.userSession=null
-    
-    this.Router.navigate(['/home'])
+    this.Router.navigate(['/login'])
     
   }
 }

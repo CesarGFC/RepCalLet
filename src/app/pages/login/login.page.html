@@ -11,12 +11,12 @@
           <form [formGroup]="form">
             <ion-item lines="full">
               <ion-label position="floating"><ion-icon [name]="'person'" ></ion-icon></ion-label>
-              <ion-input type="text" formControlName = "user" ></ion-input> 
+              <ion-input type="text" formControlName = "user" placeholder="Correo electrónico"></ion-input> 
             </ion-item>
         
             <ion-item lines="full">
               <ion-label position="floating"><ion-icon [name]="'key'"></ion-icon></ion-label>
-              <ion-input type="password" formControlName = "password"></ion-input>
+              <ion-input type="password" formControlName = "password" placeholder="Contraseña"></ion-input>
             </ion-item>
         
             <ion-row>
@@ -38,10 +38,9 @@
         <ion-toolbar>
           <ion-title>
             <div contentId="container">
-                <p>Síguenos en</p>
-          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-facebook'"></ion-icon></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-instagram'"></ion-icon></a>
-          </div>  
+              <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-facebook'"></ion-icon></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"><ion-icon class="icons" slot="end" [name]="'logo-instagram'"></ion-icon></a>        
+            </div>  
         </ion-title>
         </ion-toolbar>
       </ion-footer>

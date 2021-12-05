@@ -3,63 +3,45 @@
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
 </ion-toolbar>
-  <ion-menu side="start" contentId="main">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Start Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>
-            Modificar datos de la cuenta
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Estado de reparaciones
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Modificar roles
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Ver clientes
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Artículos
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Productos
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Ventas
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Sucursales
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label color="danger" (click)="logout()">
-            Cerrar sesión
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <ion-router-outlet id="main"></ion-router-outlet>
+<ion-menu side="start" contentId="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Opciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        Datos de la cuenta
+      </ion-item>
+      <ion-item>
+        Roles
+      </ion-item>
+      <ion-item>
+        Estado de reparaciones
+      </ion-item>
+      <ion-item>
+        Ver artículos
+      </ion-item>
+      <ion-item>
+        Ver clientes
+      </ion-item>
+      <ion-item>
+        Ver productos
+      </ion-item>
+      <ion-item>
+        Ver ventas
+      </ion-item>
+      <ion-item>
+        Sucursales
+      </ion-item>
+      <ion-item color="danger" (click)="logout()">
+        Cerrar sesión
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
 <!-- <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
   <ion-header>
     <ion-toolbar color="tertiary">
