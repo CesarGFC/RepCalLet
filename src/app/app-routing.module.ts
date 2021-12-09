@@ -66,7 +66,35 @@ const routes: Routes = [
     path: 'salidas',
     loadChildren: () => import('./pages/salidas/salidas.module').then( m => m.SalidasPageModule),
     canActivate: [CanActivateViaAuthGuard]
+  },  {
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
   },
+  {
+    path: 'articulos',
+    loadChildren: () => import('./pages/articulos/articulos.module').then( m => m.ArticulosPageModule)
+  },
+  {
+    path: 'clientes',
+    loadChildren: () => import('./pages/clientes/clientes.module').then( m => m.ClientesPageModule)
+  },
+  {
+    path: 'servicios',
+    loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
+  },
+  {
+    path: 'sucursales',
+    loadChildren: () => import('./pages/sucursales/sucursales.module').then( m => m.SucursalesPageModule)
+  },
+  {
+    path: 'cotizaciones',
+    loadChildren: () => import('./pages/cotizaciones/cotizaciones.module').then( m => m.CotizacionesPageModule)
+  },
+  {
+    path: 'cortecaja',
+    loadChildren: () => import('./pages/cortecaja/cortecaja.module').then( m => m.CortecajaPageModule)
+  },
+
 
 ];
 @NgModule({

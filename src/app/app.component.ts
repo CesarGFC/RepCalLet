@@ -13,15 +13,16 @@ export class AppComponent {
   showMenu=false
   pages = [
     {opcion:"Datos de la cuenta", route:'/datos'},
-    {opcion: "Roles", route:'/empleado',rol:Roles.administrador},
-    {opcion:"Estado de reparaciones", route: '/entradas', rol:Roles.administrador},
-    {opcion:"Ver artículos", route: '/articulos'}, 
-    {opcion:"Ver clientes", route: '/clientes', rol:Roles.administrador},
-    {opcion:"Ver movimientos", route: '/movimientos', rol:Roles.administrador},
-    {opcion:"Ver productos", route: '/productos'},
-    {opcion:"Ver servicios", route: '/servicios'},
-    {opcion:"Ver ventas", route: '/ventas', rol:Roles.administrador},
+    {opcion:"Artículos", route: '/articulos'}, 
+    {opcion:"Clientes", route: '/clientes', rol:Roles.administrador},
+    {opcion:"Corte de caja", route: '/cortecaja', rol:Roles.administrador},
+    {opcion:"Movimientos", route: '/movimientos', rol:Roles.administrador},
+    {opcion:"Productos", route: '/productos'},
+    {opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
+    {opcion:"Roles", route:'/empleados',rol:Roles.administrador},
+    {opcion:"Servicios", route: '/servicios'},
     {opcion:"Sucursales", route: '/sucursales', rol:Roles.cliente},
+    {opcion:"Ventas", route: '/ventas', rol:Roles.administrador},
   ];
       
   constructor(private GlobalStateService:GlobalStateService, private Router:Router) {
