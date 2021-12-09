@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>movimientos</ion-title>
+    <ion-title>Movimientos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-label>"Categoria", "NombreProd", "Marca", "Precio", "Tamaño", "Color", "Cantidad inicial", "Vendido", "Cantidad existencia"</ion-label>
+  <ion-grid class="ion-text-center">
+    <ion-row class="header-row">
+      <ion-col><ion-text>Fecha</ion-text></ion-col>
+      <ion-col><ion-text>Usuario</ion-text></ion-col>
+      <ion-col><ion-text>Movimiento</ion-text></ion-col>
+    </ion-row>
+      <!-- <ion-row ng-repeat="producto in productos.producto">
+    <ion-col><ion-text>{{Fecha}}</ion-text></ion-col>
+    <ion-col><ion-text>{{Usuario}}</ion-text></ion-col>
+    <ion-col><ion-text>{{Movimiento}}</ion-text></ion-col>
+      </ion-row> -->
+  </ion-grid>
 </ion-content>

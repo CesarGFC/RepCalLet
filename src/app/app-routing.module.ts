@@ -38,11 +38,6 @@ const routes: Routes = [
     canActivate: [CanActivateViaAuthGuard]
   },
   {
-    path: 'entradas',
-    loadChildren: () => import('./pages/entradas/entradas.module').then( m => m.EntradasPageModule),
-    canActivate: [CanActivateViaAuthGuard]
-  },
-  {
     path: 'productos',
     loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
     canActivate: [CanActivateViaAuthGuard]
@@ -53,20 +48,11 @@ const routes: Routes = [
     canActivate: [CanActivateViaAuthGuard]
   },
   {
-    path: 'notas',
-    loadChildren: () => import('./pages/notas/notas.module').then( m => m.NotasPageModule),
-    canActivate: [CanActivateViaAuthGuard]
-  },
-  {
     path: 'ventas',
     loadChildren: () => import('./pages/ventas/ventas.module').then( m => m.VentasPageModule),
     canActivate: [CanActivateViaAuthGuard]
   },
   {
-    path: 'salidas',
-    loadChildren: () => import('./pages/salidas/salidas.module').then( m => m.SalidasPageModule),
-    canActivate: [CanActivateViaAuthGuard]
-  },  {
     path: 'datos',
     loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
   },

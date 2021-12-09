@@ -1,20 +1,10 @@
-body {
-    cursor: auto;
-}
-.header .col {
-    background-color:lightgrey;
-}
-
-.col {
-    border: solid 1px grey;
-    border-bottom-style: none;
-    border-right-style: none;
-}
-
-.col:last-child {
-    border-right: solid 1px grey;
-}
-
-.row:last-child .col {
-    border-bottom: solid 1px grey;
-}
+.header-row {
+    background: #7163AA;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  ion-col {
+    border: 1px solid #ECEEEF;
+  }
+  
