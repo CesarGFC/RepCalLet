@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CanActivateViaAuthGuard, CanDeActivateViaAuthGuard } from './guards/permissions';
 
 const routes: Routes = [
   {
@@ -7,55 +8,64 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [CanDeActivateViaAuthGuard]
   },
     {
     path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule),
+    canActivate: [CanActivateViaAuthGuard]
+
   },
   {
     path: 'registration',
-    loadChildren: () => import('./pages/registration/registration.module').then( m => m.RegistrationPageModule)
+    loadChildren: () => import('./pages/registration/registration.module').then( m => m.RegistrationPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'notifications',
-    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'empleados',
-    loadChildren: () => import('./pages/empleados/empleados.module').then( m => m.EmpleadosPageModule)
+    loadChildren: () => import('./pages/empleados/empleados.module').then( m => m.EmpleadosPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'entradas',
-    loadChildren: () => import('./pages/entradas/entradas.module').then( m => m.EntradasPageModule)
+    loadChildren: () => import('./pages/entradas/entradas.module').then( m => m.EntradasPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'productos',
-    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule)
+    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'movimientos',
-    loadChildren: () => import('./pages/movimientos/movimientos.module').then( m => m.MovimientosPageModule)
+    loadChildren: () => import('./pages/movimientos/movimientos.module').then( m => m.MovimientosPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'notas',
-    loadChildren: () => import('./pages/notas/notas.module').then( m => m.NotasPageModule)
+    loadChildren: () => import('./pages/notas/notas.module').then( m => m.NotasPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'ventas',
-    loadChildren: () => import('./pages/ventas/ventas.module').then( m => m.VentasPageModule)
+    loadChildren: () => import('./pages/ventas/ventas.module').then( m => m.VentasPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: 'salidas',
-    loadChildren: () => import('./pages/salidas/salidas.module').then( m => m.SalidasPageModule)
-  },
-  {
-    path: 'tareas',
-    loadChildren: () => import('./pages/tareas/tareas.module').then( m => m.TareasPageModule)
+    loadChildren: () => import('./pages/salidas/salidas.module').then( m => m.SalidasPageModule),
+    canActivate: [CanActivateViaAuthGuard]
   },
 
 ];

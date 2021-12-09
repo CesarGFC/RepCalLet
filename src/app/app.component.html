@@ -11,30 +11,12 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>
-        Datos de la cuenta
-      </ion-item>
-      <ion-item>
-        Roles
-      </ion-item>
-      <ion-item>
-        Estado de reparaciones
-      </ion-item>
-      <ion-item>
-        Ver artículos
-      </ion-item>
-      <ion-item>
-        Ver clientes
-      </ion-item>
-      <ion-item>
-        Ver productos
-      </ion-item>
-      <ion-item>
-        Ver ventas
-      </ion-item>
-      <ion-item>
-        Sucursales
-      </ion-item>
+      <ng-container *ngFor="let page of pages">
+       
+        <ion-item *ngIf="!page.rol || page.rol === rol" [routerLink]="page.route">
+          {{page.opcion}}
+        </ion-item>
+      </ng-container>
       <ion-item color="danger" (click)="logout()">
         Cerrar sesión
       </ion-item>
