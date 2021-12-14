@@ -20,12 +20,12 @@ const routes: Routes = [
   {
     path: 'registration',
     loadChildren: () => import('./pages/registration/registration.module').then( m => m.RegistrationPageModule),
-    canActivate: [CanActivateViaAuthGuard]
+    canActivate: [CanDeActivateViaAuthGuard]
   },
   {
     path: 'forgot-password',
     loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule),
-    canActivate: [CanActivateViaAuthGuard]
+    canActivate: [CanDeActivateViaAuthGuard]
   },
   {
     path: 'notifications',
@@ -69,8 +69,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
   },
   {
-    path: 'sucursales',
-    loadChildren: () => import('./pages/sucursales/sucursales.module').then( m => m.SucursalesPageModule)
+    path: 'acercade',
+    loadChildren: () => import('./pages/acercade/acercade.module').then( m => m.AcercadePageModule)
   },
   {
     path: 'cotizaciones',

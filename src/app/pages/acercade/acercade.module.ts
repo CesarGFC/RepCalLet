@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SucursalesPageRoutingModule } from './sucursales-routing.module';
+import { AcercadePageRoutingModule } from './acercade-routing.module';
+import { AcercadePage } from './acercade.page';
 
-import { SucursalesPage } from './sucursales.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SucursalesPageRoutingModule
+    AcercadePageRoutingModule
   ],
-  declarations: [SucursalesPage]
+  declarations: [AcercadePage]
 })
-export class SucursalesPageModule {}
+export class AcercadePageModule {}

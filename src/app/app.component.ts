@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GlobalStateService } from './services/global-state.service';
 import { Router } from '@angular/router';
 import { Roles } from './enums/roles.enums';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -21,15 +22,16 @@ export class AppComponent {
     {opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
     {opcion:"Roles", route:'/empleados',rol:Roles.administrador},
     {opcion:"Servicios", route: '/servicios'},
-    {opcion:"Sucursales", route: '/sucursales', rol:Roles.cliente},
+    {opcion:"Acerca de", route: '/acercade', rol:Roles.empleado},
     {opcion:"Ventas", route: '/ventas', rol:Roles.administrador},
   ];
       
-  constructor(private GlobalStateService:GlobalStateService, private Router:Router) {
+  constructor(private GlobalStateService:GlobalStateService, private Router:Router, private MenuController:MenuController) {
     this.Router
     this.GlobalStateService.asObservable.subscribe(  x=>{
     this.showMenu=!!x;
     this.rol=this.GlobalStateService.userSession?.user.role
+    this.MenuController.enable(!!x)
     })
   }
   isAdmin(){

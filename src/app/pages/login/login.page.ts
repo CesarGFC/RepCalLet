@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { MenuController, ToastController } from '@ionic/angular';
 import { GlobalStateService } from 'src/app/services/global-state.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
       user:new FormControl(null,Validators.required),
       password:new FormControl(null,Validators.required),
     }
-    )
+    ) 
   }
   async presentToast() {
     const toast = await this.toastController.create({
