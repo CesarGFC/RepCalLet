@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 // import module
 
 // import { LoginPage } from './pages/login/login.page';
-import { RegistrationPage } from './pages/registration/registration.page';
 import { ForgotPasswordPage } from './pages/forgot-password/forgot-password.page';
 import { TabsPageModule } from './tabs/tabs.module';
 import { NotificationsPageModule } from './pages/notifications/notifications.module';
@@ -18,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationPage,
     ForgotPasswordPage,
   ],
   entryComponents: [
