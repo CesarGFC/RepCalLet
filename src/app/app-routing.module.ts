@@ -33,11 +33,6 @@ const routes: Routes = [
     canActivate: [CanActivateViaAuthGuard]
   },
   {
-    path: 'empleados',
-    loadChildren: () => import('./pages/empleados/empleados.module').then( m => m.EmpleadosPageModule),
-    canActivate: [CanActivateViaAuthGuard]
-  },
-  {
     path: 'productos',
     loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
     canActivate: [CanActivateViaAuthGuard]
@@ -79,7 +74,11 @@ const routes: Routes = [
   {
     path: 'cortecaja',
     loadChildren: () => import('./pages/cortecaja/cortecaja.module').then( m => m.CortecajaPageModule)
+  },  {
+    path: 'detalle-nota',
+    loadChildren: () => import('./pages/detalle-nota/detalle-nota.module').then( m => m.DetalleNotaPageModule)
   },
+
 
 
 ];

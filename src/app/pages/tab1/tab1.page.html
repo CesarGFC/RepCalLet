@@ -1,25 +1,34 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>  
     <ion-title>
-      Bienvenido/a 
+      Bienvenido/a {{displayNombre}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-label>No tienes algo en proceso</ion-label>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>"Cliente"</ion-card-title>
-      <ion-card-subtitle>Mmmm</ion-card-subtitle>
-      <ion-label>ID</ion-label>
-      <ion-label>Fecha inicio</ion-label>
-      <ion-label>Estado (Recibido, En proceso, En pausa, Finalizado, Entregado)</ion-label>
-      <ion-label>Fecha estimada de entrega</ion-label>
-    </ion-card-header>
-  </ion-card>
-  
+  <ion-content [fullscreen]="true">
+    <ion-card class="card" *ngFor="let note of notes">
+      <ion-card-header>
+        <ion-card-title>Nota número: {{note.numero}}</ion-card-title>
+      </ion-card-header>
+      <ion-item>
+      <!-- <ion-img class="user-avatar round" src="../assets/icon/favicon.png"></ion-img> -->
+      <ion-icon class= "icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-nota" [queryParams]="{noteid:note.nota_id}"></ion-icon>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+        <ion-label>Articulos: {{note.articulos.length}}</ion-label>
+      </ion-item>
+      <ion-item href="">
+        <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+        <ion-label>{{note.cliente.nombre}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon name="time" slot="start"></ion-icon>
+        <ion-label>{{note.fecha_llegada}}</ion-label>
+      </ion-item>
+    </ion-card>
 </ion-content>

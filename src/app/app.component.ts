@@ -22,7 +22,7 @@ export class AppComponent {
     {opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
     {opcion:"Roles", route:'/empleados',rol:Roles.administrador},
     {opcion:"Servicios", route: '/servicios'},
-    {opcion:"Acerca de", route: '/acercade', rol:Roles.empleado},
+    {opcion:"Acerca de", route: '/acercade', rol:Roles.cliente},
     {opcion:"Ventas", route: '/ventas', rol:Roles.administrador},
   ];
       

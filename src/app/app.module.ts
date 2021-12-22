@@ -12,7 +12,8 @@ import { ForgotPasswordPage } from './pages/forgot-password/forgot-password.page
 import { TabsPageModule } from './tabs/tabs.module';
 import { NotificationsPageModule } from './pages/notifications/notifications.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/interservice';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     TabsPageModule],
     providers: [{ provide: RouteReuseStrategy, 
-                useClass: IonicRouteStrategy }],
+                useClass: IonicRouteStrategy
+                 },
+                 {
+                  provide: HTTP_INTERCEPTORS,
+                  useClass: AuthInterceptorService,
+                  multi: true
+                }
+                ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
