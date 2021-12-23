@@ -18,7 +18,7 @@ export class AppComponent {
     {opcion:"Clientes", route: '/clientes', rol:Roles.administrador},
     {opcion:"Corte de caja", route: '/cortecaja', rol:Roles.administrador},
     {opcion:"Movimientos", route: '/movimientos', rol:Roles.administrador},
-    {opcion:"Productos", route: '/productos'},
+    //{opcion:"Productos", route: '/productos'},
     {opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
     {opcion:"Roles", route:'/empleados',rol:Roles.administrador},
     {opcion:"Servicios", route: '/servicios'},

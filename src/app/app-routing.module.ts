@@ -32,11 +32,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule),
     canActivate: [CanActivateViaAuthGuard]
   },
-  {
-    path: 'productos',
-    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
-    canActivate: [CanActivateViaAuthGuard]
-  },
+  // {
+  //   path: 'productos',
+  //   loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
+  //   canActivate: [CanActivateViaAuthGuard]
+  // },
   {
     path: 'movimientos',
     loadChildren: () => import('./pages/movimientos/movimientos.module').then( m => m.MovimientosPageModule),
@@ -74,7 +74,8 @@ const routes: Routes = [
   {
     path: 'cortecaja',
     loadChildren: () => import('./pages/cortecaja/cortecaja.module').then( m => m.CortecajaPageModule)
-  },  {
+  },
+  {
     path: 'detalle-nota',
     loadChildren: () => import('./pages/detalle-nota/detalle-nota.module').then( m => m.DetalleNotaPageModule)
   },
