@@ -14,14 +14,14 @@ export class AppComponent {
   showMenu=false
   pages = [
     {opcion:"Datos de la cuenta", route:'/datos'},
-    {opcion:"Artículos", route: '/articulos'}, 
+    // {opcion:"Artículos", route: '/articulos'}, 
     {opcion:"Clientes", route: '/clientes', rol:Roles.administrador},
     {opcion:"Corte de caja", route: '/cortecaja', rol:Roles.administrador},
     {opcion:"Movimientos", route: '/movimientos', rol:Roles.administrador},
     //{opcion:"Productos", route: '/productos'},
-    {opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
-    {opcion:"Roles", route:'/empleados',rol:Roles.administrador},
-    {opcion:"Servicios", route: '/servicios'},
+    //{opcion:"Reparaciones", route: '/entradas', rol:Roles.administrador},
+    //{opcion:"Roles", route:'/empleados',rol:Roles.administrador},
+    //{opcion:"Servicios", route: '/servicios'},
     {opcion:"Acerca de", route: '/acercade', rol:Roles.cliente},
     {opcion:"Ventas", route: '/ventas', rol:Roles.administrador},
   ];

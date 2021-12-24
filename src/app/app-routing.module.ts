@@ -59,10 +59,10 @@ const routes: Routes = [
     path: 'clientes',
     loadChildren: () => import('./pages/clientes/clientes.module').then( m => m.ClientesPageModule)
   },
-  {
-    path: 'servicios',
-    loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
-  },
+  // {
+  //   path: 'servicios',
+  //   loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
+  // },
   {
     path: 'acercade',
     loadChildren: () => import('./pages/acercade/acercade.module').then( m => m.AcercadePageModule)
