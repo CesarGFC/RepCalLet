@@ -8,16 +8,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="ion-text-center">
+  <ion-grid class="ion-text-center" >
     <ion-row class="header-row">
       <ion-col><ion-text>Fecha</ion-text></ion-col>
       <ion-col><ion-text>Usuario</ion-text></ion-col>
       <ion-col><ion-text>Movimiento</ion-text></ion-col>
     </ion-row>
-      <!-- <ion-row ng-repeat="producto in productos.producto">
-    <ion-col><ion-text>{{Fecha}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Usuario}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Movimiento}}</ion-text></ion-col>
-      </ion-row> -->
+    <!-- <ion-row ng-repeat="producto in productos.producto"> -->
+    <!-- <ion-col><ion-text>{{Fecha}}</ion-text></ion-col> -->
+    <ion-row class="header-row" *ngFor='let movement of movements'>
+      <ion-col><ion-text>{{movement.fecha}}</ion-text></ion-col>
+      <ion-col><ion-text>{{movement.usuario_id}}</ion-text></ion-col>
+      <ion-col><ion-text>{{movement.descripcion}}</ion-text></ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
