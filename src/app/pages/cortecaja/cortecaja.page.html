@@ -10,30 +10,30 @@
   </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
-  <ion-card class="card">
+  <ion-card class="card"*ngFor="let cashcut of cashcuts">
     <ion-card-header>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      <ion-card-title name="calendar-outline">2021/12/23{{fecha}}</ion-card-title>
+      <ion-card-title name="calendar-outline">{{cashcut.fecha}}</ion-card-title>
     </ion-card-header>
       <ion-item class="ion-activated">
         <ion-icon name="id-card-outline" slot="start"></ion-icon>
-        <ion-label>{{corte_caja_id}}</ion-label>
+        <ion-label>{{cashcut.corte_caja_id}}</ion-label>
       </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="wallet-outline" slot="start"></ion-icon>
-        <ion-label>Inicial: $200{{caja_inicial}}</ion-label>
+        <ion-label>Inicial: ${{cashcut.caja_inicial}}</ion-label>
       </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="wallet-outline" slot="start"></ion-icon>
-        <ion-label>Final: $3160{{caja_final}}</ion-label>
+        <ion-label>Final: ${{cashcut.caja_final}}</ion-label>
       </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="id-card" slot="start"></ion-icon>
-        <ion-label>Danna Paola{{usuario_id}}</ion-label>
+        <ion-label>{{cashcut.usuario_id}}</ion-label>
       </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
-        <ion-label>Ninguno{{comentarios}}</ion-label>
+        <ion-label>{{cashcut.comentarios}}</ion-label>
       </ion-item>
   </ion-card>
 </ion-content>
