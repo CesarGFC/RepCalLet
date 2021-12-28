@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'detalle-nota',
     loadChildren: () => import('./pages/detalle-nota/detalle-nota.module').then( m => m.DetalleNotaPageModule)
+  },  {
+    path: 'detalle-venta',
+    loadChildren: () => import('./pages/detalle-venta/detalle-venta.module').then( m => m.DetalleVentaPageModule)
   },
+
 
 
 

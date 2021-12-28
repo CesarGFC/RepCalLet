@@ -23,7 +23,6 @@ export class DetalleNotaPage implements OnInit {
    // this.getData()
   }
   async getData(noteid:string){
-
     try{
       this.note= await this.notesService.getById(noteid).toPromise()
       console.log(this.note)

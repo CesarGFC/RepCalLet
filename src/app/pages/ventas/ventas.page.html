@@ -1,8 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>  
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
       Ventas
     </ion-title>
@@ -10,33 +10,21 @@
 </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
-  <ion-card class="card">
+  <ion-card class="card" *ngFor="let sale of sales">
     <ion-card-header>
-      <ion-card-title> 2021/12/22</ion-card-title>
+      <ion-card-title> {{sale.fecha}}</ion-card-title>
     </ion-card-header>
-      <ion-item class="ion-activated">
-        <ion-icon name="filter-outline" slot="start"></ion-icon>
-        <ion-label>Productos: 1 {{}}</ion-label>
-        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-      </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="trophy-outline" slot="start"></ion-icon>
-        <ion-icon name="color-palette-outline" slot="start"></ion-icon>
-        <ion-label>VentaID: 1ea7bf2341ac{{}}</ion-label>       
-      </ion-item>
+    <ion-item>
+      <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-venta"
+        [queryParams]="{saleid:sale.venta_id}"></ion-icon>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="filter-outline" slot="start"></ion-icon>
+      <ion-label>{{sale.corte_caja_id}}</ion-label>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="trophy-outline" slot="start"></ion-icon>
+      <ion-label>{{sale.venta_id}}</ion-label>
+    </ion-item>
   </ion-card>
 </ion-content>
-
-<!-- <ion-content>
-  <ion-grid class="ion-text-center">
-    <ion-row class="header-row">
-      <ion-col><ion-text>Cantidad</ion-text></ion-col>
-      <ion-col><ion-text>Nombre</ion-text></ion-col>
-      <ion-col><ion-text>Marca</ion-text></ion-col>
-      <ion-col><ion-text>Precio</ion-text></ion-col>
-      <ion-col><ion-text>Color</ion-text></ion-col>
-      <ion-col><ion-text>Fecha venta</ion-text></ion-col>
-      <ion-col><ion-text>Empleado</ion-text></ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content> -->

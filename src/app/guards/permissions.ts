@@ -28,7 +28,7 @@ export class CanDeActivateViaAuthGuard implements CanActivate {
     canActivate() {
         // If the user is not logged in we'll send them back to the home page
         if (this.authService.isLogged()) {
-            this.router.navigate(['/tabs/tab1']);
+            this.router.navigate(['/tabs/notes']);
             return false;
         }
         return true;

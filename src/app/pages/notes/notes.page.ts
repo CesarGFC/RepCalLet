@@ -5,11 +5,11 @@ import { notesService } from 'src/app/services/notes-service';
 import { toastService } from 'src/app/services/toast.service';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-notes',
+  templateUrl: 'notes.page.html',
+  styleUrls: ['notes.page.scss']
 })
-export class Tab1Page implements OnInit{
+export class NotesPage implements OnInit{
   displayNombre = ""
   notes:Array<INotes>=[]
   constructor(private notesService:notesService, private toastService:toastService, private globalStateService:GlobalStateService) {
