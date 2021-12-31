@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card *ngIf="note">
-    <ion-item >
+    <ion-item>
       <ion-icon name="person-circle-outline" slot="start"></ion-icon>
       <ion-label> {{note.cliente.nombre}}</ion-label>
     </ion-item>
@@ -18,15 +18,11 @@
       <ion-label> {{note.cliente.telefono1}}</ion-label>
       <ion-label> {{note.cliente.telefono2}}</ion-label>
     </ion-item>
-    <ion-item *ngFor="let articulo of note.articulos"> 
-      <ion-icon name="cart-outline" slot="start"></ion-icon>
-      <ion-label>Articulo: {{note.articulos.articulo}}</ion-label>
-    </ion-item>
-    <ion-item >
+    <ion-item>
       <ion-icon name="calendar-number-outline" slot="start"></ion-icon>
       <ion-label>{{note.fecha_llegada}}</ion-label>
     </ion-item>
-    <ion-item >
+    <ion-item>
       <ion-icon name="cash-outline" slot="start"></ion-icon>
       <ion-label>Anticipo: ${{note.anticipo}}</ion-label>
     </ion-item>
@@ -34,11 +30,11 @@
       <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
       <ion-label>Corte caja: {{note.corte_caja_id}}</ion-label>
     </ion-item> -->
-    <ion-item >
+    <ion-item>
       <ion-icon name="remove-circle-outline" slot="start"></ion-icon>
       <ion-label>Descuento: ${{note.descuento}}</ion-label>
     </ion-item>
-    <ion-item >
+    <ion-item>
       <ion-icon name="cash-outline" slot="start"></ion-icon>
       <ion-label>Abono: ${{note.abono}}</ion-label>
     </ion-item>
@@ -47,4 +43,26 @@
       <ion-label>id: {{note.nota_id}}</ion-label>
     </ion-item> -->
   </ion-card>
-</ion-content> 
+  <ion-card *ngFor="let articulo of note?.articulos">
+    <ion-item>
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      <ion-label>Articulo: {{articulo.nombre}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      <ion-label>Articulo: {{articulo.cantidad}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      <ion-label>Articulo: {{articulo.color}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      <ion-label>Articulo: {{articulo.comentario}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="cart-outline" slot="start"></ion-icon>
+      <ion-label>Articulo: {{articulo.estado.nombre}}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

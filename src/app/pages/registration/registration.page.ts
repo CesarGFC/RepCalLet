@@ -15,7 +15,7 @@ export class RegistrationPage implements OnInit {
     this.form = new FormGroup({
       nombre:new FormControl(null,Validators.required),
       telefono:new FormControl(null,Validators.required),
-      usuario:new FormControl(null,Validators.required),
+      correo:new FormControl(null,Validators.required),
       contrasena:new FormControl(null,Validators.required),
       ccontrasena:new FormControl(null,Validators.required)
     })

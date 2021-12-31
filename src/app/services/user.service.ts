@@ -17,5 +17,10 @@ export class UserService {
       ...data
     }) as any
   }
+  recoveryPass(correo:string){
+    return this.HttpClient.post(this.base + "users/recovery-password",{
+      correo
+    }) as any
+  }
 
 }

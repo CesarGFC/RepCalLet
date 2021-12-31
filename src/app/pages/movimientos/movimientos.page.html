@@ -1,24 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+    <ion-icon slot="start" name='home' [routerLink]="['/tabs/notes']"></ion-icon>
     <ion-title>Movimientos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid class="ion-text-center" >
-    <ion-row class="header-row">
+    <ion-row class="table-headers">
       <ion-col><ion-text>Fecha</ion-text></ion-col>
       <ion-col><ion-text>Usuario</ion-text></ion-col>
       <ion-col><ion-text>Movimiento</ion-text></ion-col>
     </ion-row>
     <!-- <ion-row ng-repeat="producto in productos.producto"> -->
     <!-- <ion-col><ion-text>{{Fecha}}</ion-text></ion-col> -->
-    <ion-row class="header-row" *ngFor='let movement of movements'>
+    <ion-row class="table-rows" *ngFor='let movement of movements'>
       <ion-col><ion-text>{{movement.fecha}}</ion-text></ion-col>
-      <ion-col><ion-text>{{movement.usuario_id}}</ion-text></ion-col>
+      <ion-col><ion-text>{{movement.usuario_id.nombre}}</ion-text></ion-col>
       <ion-col><ion-text>{{movement.descripcion}}</ion-text></ion-col>
     </ion-row>
   </ion-grid>
