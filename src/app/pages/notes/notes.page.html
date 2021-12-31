@@ -2,33 +2,31 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>  
+    </ion-buttons>
     <ion-title>
       Bienvenido/a {{displayNombre}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
-  <ion-content [fullscreen]="true">
-    <ion-card class="card" *ngFor="let note of notes">
-      <ion-card-header>
-        <ion-card-title>Nota número: {{note.numero}}</ion-card-title>
-      </ion-card-header>
+<ion-content class="cards" [fullscreen]="true">
+  <ion-card class="card" *ngFor="let note of notes">
+    <ion-card-header>
       <ion-item>
-        <!-- <ion-img class="user-avatar round" src="../assets/icon/favicon.png"></ion-img> -->
-        <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-nota"
-          [queryParams]="{noteid:note.nota_id}"></ion-icon>
+      <ion-card-title class="title">Nota #{{note.numero}}</ion-card-title>
+        <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-nota" [queryParams]="{noteid:note.nota_id}"></ion-icon>
       </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
-        <ion-label>Articulos: {{note.articulos.length}}</ion-label>
-      </ion-item>
-      <ion-item href="">
-        <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-        <ion-label>{{note.cliente.nombre}}</ion-label>
-      </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="time" slot="start"></ion-icon>
-        <ion-label>{{note.fecha_llegada}}</ion-label>
-      </ion-item>
-    </ion-card>
-  </ion-content>
+    </ion-card-header>
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-label>{{note.cliente.nombre}}</ion-label>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="list-circle-outline" slot="start"></ion-icon>
+      <ion-label>Articulos: {{note.articulos.length}}</ion-label>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="time" slot="start"></ion-icon>
+      <ion-label>{{note.fecha_llegada}}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

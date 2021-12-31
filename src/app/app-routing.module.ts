@@ -52,10 +52,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
   },
   {
-    path: 'articulos',
-    loadChildren: () => import('./pages/articulos/articulos.module').then( m => m.ArticulosPageModule)
-  },
-  {
     path: 'clientes',
     loadChildren: () => import('./pages/clientes/clientes.module').then( m => m.ClientesPageModule)
   },
@@ -78,7 +74,8 @@ const routes: Routes = [
   {
     path: 'detalle-nota',
     loadChildren: () => import('./pages/detalle-nota/detalle-nota.module').then( m => m.DetalleNotaPageModule)
-  },  {
+  },
+  {
     path: 'detalle-venta',
     loadChildren: () => import('./pages/detalle-venta/detalle-venta.module').then( m => m.DetalleVentaPageModule)
   },

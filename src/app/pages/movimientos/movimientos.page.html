@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon slot="start" name='home' [routerLink]="['/tabs/notes']"></ion-icon>
+    <ion-buttons slot="start">
+    <ion-back-button icon="home" defaultHref="['/tabs/notes']" [routerLink]="['/tabs/notes']"></ion-back-button>
     <ion-title>Movimientos</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

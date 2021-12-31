@@ -1,18 +1,21 @@
-NotesPage{ 
-   background-color: white;
-   background: yellow;
+ion-header ion-title {
+   font:oblique bold 120% cursive;
 }
-app-notes{ 
-    background-color: white;
-    background: yellow;
- }
- .user-avatar {
-   max-width: 125px;
-   height: 125px;
-   padding: .5em;
-   height: 12vh;
- }
- .icon-watch{
-    position:relative;
-
- }
+.title{
+   font:oblique bold 110% cursive;
+}
+ion-item ion-label{
+   font:oblique bold 80% cursive;
+}
+.icon-watch{
+   cursor: pointer;
+}
+//  .user-avatar {
+//    max-width: 125px;
+//    height: 125px;
+//    padding: .5em;
+//    height: 12vh;
+//  }
+//  .icon-watch{
+//     position:relative;
+//  }

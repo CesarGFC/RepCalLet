@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuController, ToastController } from '@ionic/angular';
 import { GlobalStateService } from 'src/app/services/global-state.service';
@@ -22,8 +22,7 @@ export class LoginPage implements OnInit {
     this.form=new FormGroup({
       user:new FormControl(null,Validators.required),
       password:new FormControl(null,Validators.required),
-    }
-    ) 
+    })
   }
   async presentToast() {
     const toast = await this.toastController.create({
@@ -31,6 +30,7 @@ export class LoginPage implements OnInit {
       duration: 2000,
     });
     toast.present();
+    //this.form.valueChanges.toPromise.arguments = ""
   }
   async iniciarSesion() {
     try {
@@ -41,6 +41,7 @@ export class LoginPage implements OnInit {
       } else {
         this.form.markAllAsTouched()
       }
+      //document.getElementById("pass").replaceWith("")
     } catch (e) {
       this.presentToast();
     }

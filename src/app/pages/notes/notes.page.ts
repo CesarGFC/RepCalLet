@@ -13,7 +13,7 @@ export class NotesPage implements OnInit{
   displayNombre = ""
   notes:Array<INotes>=[]
   constructor(private notesService:notesService, private toastService:toastService, private globalStateService:GlobalStateService) {
-    this.displayNombre=this.globalStateService.userSession?.user?.name
+    this.displayNombre=this.globalStateService.userSession?.user?.name.split(" ")[0]
   }
   ngOnInit(){
       
