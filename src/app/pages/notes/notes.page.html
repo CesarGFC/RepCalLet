@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="cards" [fullscreen]="true">
+  <ion-searchbar placeholder="Buscar por nota, nombre de cliente" inputmode="" type="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   <ion-card class="card" *ngFor="let note of notes">
     <ion-card-header>
       <ion-item>

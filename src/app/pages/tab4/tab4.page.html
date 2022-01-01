@@ -4,14 +4,22 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>  
     <ion-title>
-      Historial    
+      Historial de entregas  
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-label>Fecha</ion-label>
-<ion-label>Turno</ion-label>
-<ion-label>Empleado</ion-label>
-<ion-label>Total en ventas</ion-label>
+  <ion-grid class="ion-text-center" >
+    <ion-row class="table-headers">
+      <ion-col><ion-text>Fecha</ion-text></ion-col>
+      <ion-col><ion-text>Usuario</ion-text></ion-col>
+      <ion-col><ion-text>Movimiento</ion-text></ion-col>
+    </ion-row>
+    <ion-row class="table-rows" *ngFor='let movement of movements'>
+      <ion-col><ion-text>{{movement.fecha}}</ion-text></ion-col>
+      <ion-col><ion-text>{{movement.usuario_id.nombre}}</ion-text></ion-col>
+      <ion-col><ion-text>{{movement.descripcion}}</ion-text></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -25,17 +25,13 @@
       </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="trophy-outline" slot="start"></ion-icon>
-        <ion-icon name="color-palette-outline" slot="start"></ion-icon>
-        <ion-label>{{product.marca}}/{{product.color}}</ion-label>
-      </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="diamond-outline" slot="start"></ion-icon>
-        <ion-label>{{product.cantidad}} unidad(es) </ion-label> 
-      </ion-item>
-      <ion-item class="ion-activated">
         <ion-icon name="pricetag-outline" slot="start"></ion-icon>
-        <ion-label>${{product.precio}}</ion-label>
-        
+        <ion-label>{{product.marca}}/${{product.precio}}</ion-label>
+      </ion-item>
+      <ion-item class="ion-activated">
+        <ion-icon name="cube-outline" slot="start"></ion-icon>
+        <ion-icon name="color-palette-outline" slot="start"></ion-icon>
+        <ion-label>{{product.cantidad}} unidad(es)/{{product.color}}</ion-label>
       </ion-item>
   </ion-card>
 </ion-content>
