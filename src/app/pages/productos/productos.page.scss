@@ -3,8 +3,19 @@
     color: #fff;
     font-size: 18px;
   }
-  
+  ion-header ion-title {
+    font:oblique bold 120% cursive;
+ }
+  ion-card-title{
+    font:oblique bold 100% cursive;
+  }
   ion-col {
     border: 1px solid #ECEEEF;
   }
   
+ .title{
+    font:oblique bold 110% cursive;
+ }
+ ion-item ion-label{
+    font:oblique bold 90% cursive;
+ }
