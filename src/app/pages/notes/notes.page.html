@@ -13,7 +13,7 @@
   <ion-card class="card" *ngFor="let note of notes">
     <ion-card-header>
       <ion-item>
-      <ion-card-title class="title">Nota #{{note.numero}}</ion-card-title>
+        <ion-card-title class="title">Nota #{{note.numero}}</ion-card-title>
         <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-nota" [queryParams]="{noteid:note.nota_id}"></ion-icon>
       </ion-item>
     </ion-card-header>
@@ -22,7 +22,8 @@
       <ion-label>{{note.cliente.nombre}}</ion-label>
     </ion-item>
     <ion-item class="ion-activated">
-      <ion-icon name="list-circle-outline" slot="start"></ion-icon>
+      <!-- <ion-icon name="list-circle-outline" slot="start"></ion-icon> -->
+      <ion-icon name="cube-outline" slot="start"></ion-icon>
       <ion-label>Articulos: {{note.articulos.length}}</ion-label>
     </ion-item>
     <ion-item class="ion-activated">

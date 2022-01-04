@@ -10,8 +10,10 @@
 <ion-content [fullscreen]="true">
   <ion-card class="card"*ngFor="let cashcut of cashcuts">
     <ion-card-header>
+      <ion-item>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      <ion-card-title name="calendar-outline">{{cashcut.fecha}}</ion-card-title>
+      <ion-label>{{cashcut.fecha}}</ion-label>
+    </ion-item>
     </ion-card-header>
       <!-- <ion-item class="ion-activated">
         <ion-icon name="id-card-outline" slot="start"></ion-icon>

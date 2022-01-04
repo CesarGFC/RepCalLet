@@ -14,33 +14,19 @@
     <ion-card-header>
       <ion-card-title> {{product.categoria}}</ion-card-title>
     </ion-card-header>
-      <ion-item class="ion-activated">
+      <ion-item>
         <ion-icon name="filter-outline" slot="start"></ion-icon>
         <ion-label>{{product.nombre}}</ion-label>
       </ion-item>
-      <ion-item class="ion-activated">
+      <ion-item>
         <ion-icon name="trophy-outline" slot="start"></ion-icon>
         <ion-icon name="pricetag-outline" slot="start"></ion-icon>
         <ion-label>{{product.marca}}/${{product.precio}}</ion-label>
       </ion-item>
-      <ion-item class="ion-activated">
+      <ion-item> <!-- *ngIf="ERole=ADMINISTRADOR"-->
         <ion-icon name="cube-outline" slot="start"></ion-icon>
         <ion-icon name="color-palette-outline" slot="start"></ion-icon>
         <ion-label>{{product.cantidad}} unidad(es)/{{product.color}}</ion-label>
       </ion-item>
   </ion-card>
 </ion-content>
-<!-- <ion-row ng-repeat="producto in productos.producto">
-    <ion-col><ion-text>{{Categoria}}</ion-text></ion-col>
-    <ion-col><ion-text>{{NombreProd}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Marca}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Precio}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Tamaño}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Color}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Cantidad inicial}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Vendido}}</ion-text></ion-col>
-    <ion-col><ion-text>{{Cantidad existencia}}</ion-text></ion-col>
-    ;;;<ion-col><button class="button" ng-click="ctrl.add($index)">Add</button></div>
-    </ion-row> -->
-<!-- </ion-grid>
-</ion-content> -->
