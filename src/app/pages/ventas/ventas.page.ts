@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISales } from 'src/app/interfaces/sales.interface';
 import { GlobalStateService } from 'src/app/services/global-state.service';
-import { SalesService } from 'src/app/services/sales.service';
+import { salesService } from 'src/app/services/sales.service';
 import { toastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { toastService } from 'src/app/services/toast.service';
 })
 export class VentasPage implements OnInit {
   sales:Array<ISales>=[]
-  constructor(private salesService:SalesService,  private toastService:toastService, private globalStateService:GlobalStateService) { 
+  constructor(private salesService:salesService,  private toastService:toastService) { 
   }
 
   ngOnInit() {

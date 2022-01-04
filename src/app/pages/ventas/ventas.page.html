@@ -11,15 +11,16 @@
   <ion-card class="card" *ngFor="let sale of sales">
     <ion-card-header>
       <ion-item>
-      <ion-card-title>{{sale.venta_id}} </ion-card-title>
-      <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-venta" [queryParams]="{saleid:sale.venta_id}"></ion-icon>
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-label>{{sale.fecha}}</ion-label>
       </ion-item>
     </ion-card-header>
-    <!-- <ion-item class="ion-activated">
-      <ion-icon name="filter-outline" slot="start"></ion-icon>
-      <ion-label>{{sale.corte_caja_id}}</ion-label>
-    </ion-item> -->
-    <ion-item class="ion-activated">
+    <ion-item>
+      <ion-icon name="cube-outline" slot="start"></ion-icon>
+      <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-venta" [queryParams]="{saleid:sale.venta_id}"></ion-icon>
+      <ion-label>{{sale.productos.length}}</ion-label>
+    </ion-item>
+    <ion-item>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
       <ion-label>{{sale.fecha}}</ion-label>
     </ion-item>

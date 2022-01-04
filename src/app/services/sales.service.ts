@@ -7,7 +7,7 @@ import { ISales } from "../interfaces/sales.interface"
 @Injectable({
     providedIn: 'root'
   })
-  export class SalesService {
+  export class salesService {
     base:string = environment.API_URL
     constructor(private HttpClient:HttpClient) { 
   
