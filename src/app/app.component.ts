@@ -44,23 +44,11 @@ export class AppComponent {
   goRoles() {
     this.Router.navigate(['/empleados'])
   }
-  goEntradas() {
-    this.Router.navigate(['/entradas'])
-  }
-  goArticulos() {
-    this.Router.navigate(['/articulos'])
-  }
   goClientes() {
     this.Router.navigate(['/clientes'])
   }
   goMovimientos() {
     this.Router.navigate(['/movimientos'])
-  }
-  goProductos() {
-    this.Router.navigate(['/productos'])
-  }
-  goServicios() {
-    this.Router.navigate(['/servicios'])
   }
   goVentas() {
     this.Router.navigate(['/ventas'])

@@ -32,11 +32,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule),
     canActivate: [CanActivateViaAuthGuard]
   },
-  // {
-  //   path: 'productos',
-  //   loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule),
-  //   canActivate: [CanActivateViaAuthGuard]
-  // },
   {
     path: 'movimientos',
     loadChildren: () => import('./pages/movimientos/movimientos.module').then( m => m.MovimientosPageModule),
@@ -55,10 +50,6 @@ const routes: Routes = [
     path: 'clientes',
     loadChildren: () => import('./pages/clientes/clientes.module').then( m => m.ClientesPageModule)
   },
-  // {
-  //   path: 'servicios',
-  //   loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
-  // },
   {
     path: 'acercade',
     loadChildren: () => import('./pages/acercade/acercade.module').then( m => m.AcercadePageModule)
@@ -78,14 +69,11 @@ const routes: Routes = [
   {
     path: 'detalle-venta',
     loadChildren: () => import('./pages/detalle-venta/detalle-venta.module').then( m => m.DetalleVentaPageModule)
-  },  {
+  },
+  {
     path: 'empleados',
     loadChildren: () => import('./pages/empleados/empleados.module').then( m => m.EmpleadosPageModule)
   },
-
-
-
-
 
 ];
 @NgModule({

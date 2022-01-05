@@ -1,14 +1,39 @@
+
 ion-header ion-title {
-   font:oblique bold 120% cursive;
+   font-family: Comic Sans MS;
+   color: darkred;
+   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+   //text-shadow: 0px 0px 9px white;
+
+   //font: oblique bold 120% cursive;
+   //text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+   //color:darkred;
+   //text-shadow: -1px 0 darkred 8, 0 1px darkred 8, 1px 0 darkred 8, 0 -1px darkred 8, -2px 2px 0 darkred 8, 2px 2px 0 darkred 8, 1px 1px darkred 8, 2px 2px darkred 8, 3px 3px darkred 8, 4px 4px darkred 8, 5px 5px darkred 8, 6px 6px darkred 8, 7px 7px darkred 8, 8px 8px darkred 8, 9px 9px darkred 8;
+}
+ion-content{
+   --background:#fff url('../../../assets/img/ReparacionLetys2.jpg') no-repeat center center / cover !important;
 }
 .title{
    font:oblique bold 110% cursive;
-}
+   color: gold;
+   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}  
 ion-item ion-label{
    font:oblique bold 90% cursive;
+   color: white;
+   //text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
 .icon-watch{
+   color: #FFD700 ;
    cursor: pointer;
+}
+.icon-watch:hover{
+   color: white;
+}
+.ion-activated{
+   color: #FFD700;
+   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+
 }
 //  .user-avatar {
 //    max-width: 125px;

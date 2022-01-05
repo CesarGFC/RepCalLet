@@ -17,6 +17,9 @@ export class UserService {
       ...data
     }) as any
   }
+  getEmployees():Observable<Array<IUser>>{
+    return this.HttpClient.get(this.base+ "users/empleados") as any
+  }
   recoveryPass(correo:string){
     return this.HttpClient.post(this.base + "users/recovery-password",{
       correo
