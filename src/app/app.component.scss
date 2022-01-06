@@ -1,3 +1,18 @@
+ion-header{
+    font-family: Century Gothic;
+    font-size: 110%;
+    color: white;
+}
+ion-title{
+    font-family: Century Gothic;
+    font-size: 110%;
+    color: white;
+}
+ion-content ion-list ion-item{
+    font-family: Century Gothic;
+    font-size: 100%;
+    color: white;
+}
 ion-item{
     cursor: pointer;
 }

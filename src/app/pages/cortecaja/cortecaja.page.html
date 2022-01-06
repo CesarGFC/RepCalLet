@@ -8,29 +8,23 @@
   </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Fecha o empleado" inputmode="" type="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   <ion-card class="card"*ngFor="let cashcut of cashcuts">
-    <ion-card-header>
+    <ion-card-header class = "title">
       <ion-item>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
       <ion-label>{{cashcut.fecha}}</ion-label>
     </ion-item>
     </ion-card-header>
-      <!-- <ion-item class="ion-activated">
-        <ion-icon name="id-card-outline" slot="start"></ion-icon>
-        <ion-label>{{cashcut.corte_caja_id}}</ion-label>
-      </ion-item> -->
-      <ion-item class="ion-activated">
-        <ion-icon name="wallet-outline" slot="start"></ion-icon>
-        <ion-label>Inicial: ${{cashcut.caja_inicial}}</ion-label>
-      </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="wallet-outline" slot="start"></ion-icon>
-        <ion-label>Final: ${{cashcut.caja_final}}</ion-label>
-      </ion-item>
-      <ion-item class="ion-activated">
-        <ion-icon name="id-card" slot="start"></ion-icon>
-        <ion-label>{{cashcut.usuario_id.nombre}}</ion-label>
-      </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="id-card" slot="start"></ion-icon>
+      <ion-label>{{cashcut.usuario_id.nombre}}</ion-label>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-icon name="wallet-outline" slot="start"></ion-icon>
+      <ion-label>Inicial ${{cashcut.caja_inicial}}</ion-label>
+      <ion-label>Final ${{cashcut.caja_final}}</ion-label>
+    </ion-item>
       <ion-item class="ion-activated">
         <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
         <ion-label>{{cashcut.comentarios}}</ion-label>
