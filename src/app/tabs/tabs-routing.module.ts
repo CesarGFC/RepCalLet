@@ -20,8 +20,8 @@ const routes: Routes = [
         loadChildren: () => import('../pages/servicios/servicios.module').then(m => m.ServiciosPageModule)
       },  
       {
-        path: 'tab4',
-        loadChildren: () => import('../pages/tab4/tab4.module').then( m => m.Tab4PageModule)
+        path: 'historial',
+        loadChildren: () => import('../pages/historial/historial.module').then( m => m.HistorialPageModule)
       },
       {
         path: '',
