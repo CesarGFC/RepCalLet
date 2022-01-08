@@ -2,24 +2,46 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>  
+    </ion-buttons>
     <ion-title>
-      Historial de entregas  
+      Historial de entregas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid class="ion-text-center" >
-    <ion-row class="table-headers">
-      <ion-col><ion-text>Fecha</ion-text></ion-col>
-      <ion-col><ion-text>Usuario</ion-text></ion-col>
-      <ion-col><ion-text>Movimiento</ion-text></ion-col>
-    </ion-row>
-    <ion-row class="table-rows" *ngFor='let movement of movements'>
-      <ion-col><ion-text>{{movement.fecha}}</ion-text></ion-col>
-      <ion-col><ion-text>{{movement.usuario_id.nombre}}</ion-text></ion-col>
-      <ion-col><ion-text>{{movement.descripcion}}</ion-text></ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card>
+    <ion-grid class="ion-text-center">
+      <ion-row class="table-headers">
+        <ion-col>
+          <ion-text>Nota</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text>Fecha</ion-text>
+        </ion-col>
+        <ion-col *ngIf="isAdmin()">
+          <ion-text>Cliente</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text>Artículos</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="table-rows" *ngFor='let note of notes'>
+        <ion-col>
+          <ion-text>{{note.numero}}</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text>{{note.fecha_llegada}}</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text *ngIf="isAdmin()">{{note.cliente.nombre}}</ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-item *ngFor="let articulo of note?.articulos">
+            <ion-text>{{articulo.nombre}} {{articulo.tipo_usuario}} {{articulo.color}} {{articulo.marca}} ------------------</ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>

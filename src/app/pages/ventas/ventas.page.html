@@ -18,11 +18,7 @@
     <ion-item>
       <ion-icon name="cube-outline" slot="start"></ion-icon>
       <ion-icon class="icon-watch" name="eye" fill="outline" slot="end" routerLink="/detalle-venta" [queryParams]="{saleid:sale.venta_id}"></ion-icon>
-      <ion-label>{{sale.productos.length}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      <ion-label>{{sale.fecha}}</ion-label>
+      <ion-label>{{sale.productos.length}} productos</ion-label>
     </ion-item>
   </ion-card>
 </ion-content>
