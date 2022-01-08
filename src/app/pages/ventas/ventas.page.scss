@@ -1,3 +1,26 @@
+.title{
+    font-family: Comic Sans MS ;
+    font-size: 110%;
+    color: red;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  } 
+ ion-header ion-title {
+     font-family: Comic Sans MS;
+     color: white;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  }
+  ion-content{
+     --background:#000 url('../../../assets/img/bckgnd2.jpeg') no-repeat center center / cover;
+  }
+  ion-item ion-label{
+     font-family: Century Gothic;
+     font-size:90%;
+     color: white;
+     //text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  }
 .icon-watch{
     cursor: pointer;
 }
+.icon-watch:hover{
+    color: white;
+ }

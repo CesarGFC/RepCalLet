@@ -25,13 +25,17 @@ form{
   width: 50%;
   margin: 0 auto;
 }
-  div a {
-    text-decoration: none;
+ ion-content ion-row ion-col a {
+    font-family: Century Gothic;
+    font-size:90%;
     line-height: 32px;
-
   }
   .icons{
     display: inline-block;
     width: 50%;
     margin: 0 auto;
   }
+
+  ion-button{
+    font-family: Century Gothic;
+ }

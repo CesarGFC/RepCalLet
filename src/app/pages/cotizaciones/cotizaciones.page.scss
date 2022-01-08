@@ -1,0 +1,26 @@
+ion-header ion-title {
+    font-family: Comic Sans MS;
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+ }  
+ion-content{
+    --background:#000 url('../../../assets/img/bckgnd2.jpeg') no-repeat center center / cover; 
+}
+ion-card ion-text{
+    font-family: Century Gothic;
+    font-size:100%;
+    color: white;
+}
+.importantnote{
+    font-family: Century Gothic;
+    font-weight: bold;
+    font-size:100% ;
+    color:red 
+}
+ion-card ion-item{
+    font-family: Century Gothic;
+    font-size:100%; 
+}
+ion-item ion-label{ 
+    font-family: Century Gothic;
+    font-size:100%; }

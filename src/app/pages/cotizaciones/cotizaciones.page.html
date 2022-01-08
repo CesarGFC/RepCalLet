@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cotizaciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="home" defaultHref="['/tabs/notes']" [routerLink]="['/tabs/notes']"></ion-back-button>
+      <ion-title>Cotizaciones</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
+  <ion-card>
+    <ion-item>
+      <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+      <ion-text>Porfavor envíe un máximo de 5 imágenes donde se pueda apreciar con detalle
+        el artículo que quiere cotizar y así poder realizarle una mejor cotizacion.
+        <ion-label class="importantnote">Enviar UN SOLO artículo a la vez</ion-label>
+      </ion-text>
+    </ion-item>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label position="floating">Marca</ion-label>
+        <ion-input type="text" placeholder="Marca del artículo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea placeholder="Describa los detalles del artículo, sea conciso."></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="sendImages" name="images-outline" fill="outline" slot="start"></ion-icon>
+        <ion-button type="submit" color="danger" expand="block" (click)="upload()" slot="end">Solicitar cotización
+        </ion-button>
+      </ion-item>
+    </form>
+    <!-- formControlName = "user" -->
+
+    <!-- foto, marca articulodescripcion  -->
+  </ion-card>
 </ion-content>
