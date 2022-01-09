@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Roles } from 'src/app/enums/roles.enums';
 import { IArticulo, INotes } from 'src/app/interfaces/notes.interface';
 import { GlobalStateService } from 'src/app/services/global-state.service';

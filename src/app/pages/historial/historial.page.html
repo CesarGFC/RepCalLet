@@ -11,6 +11,7 @@
 
 <ion-content>
   <ion-card>
+    <ion-searchbar placeholder="# Nota, cliente o fecha" inputmode="" type="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
     <ion-grid class="ion-text-center">
       <ion-row class="table-headers">
         <ion-col>

@@ -8,6 +8,7 @@
 </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Fecha de la venta" inputmode="" type="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   <ion-card class="card" *ngFor="let sale of sales">
     <ion-card-header>
       <ion-item>
