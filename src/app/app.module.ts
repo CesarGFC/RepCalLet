@@ -14,11 +14,13 @@ import { NotificationsPageModule } from './pages/notifications/notifications.mod
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/interservice';
-
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { PipesModule } from './pipes/pipes.module';
 @NgModule({
   declarations: [
     AppComponent,
     ForgotPasswordPage,
+    FiltroPipe,
   ],
   entryComponents: [
   ],

@@ -10,6 +10,7 @@
   </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Categoría" inputmode="" type="" (ionChange)="onSearch($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
   <ion-card class="card" *ngFor="let product of products">
     <ion-card-header>
       <ion-card-title class="title"> {{product.categoria}}</ion-card-title>

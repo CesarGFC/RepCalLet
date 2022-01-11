@@ -31,8 +31,10 @@ export class HistorialPage implements OnInit {
   }
   async getData() {
     try {
-      this.notes = await this.notesService.getNotes().toPromise()
-      console.log(this.notes)
+      this.notes = await this.notesService.getNotes(true).toPromise()
+      this.notes=this.notes.map(note=>({
+        ...note, articulos:note.articulos.filter(articulo=>articulo.estado.nombre=="Entregado")
+      }))
     } catch (error) {
       this.toastService.catchError(error)
     }

@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <!-- <ion-card>
     <ion-item>
       <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
       <ion-text>Porfavor envíe un máximo de 5 imágenes donde se pueda apreciar con detalle
@@ -16,7 +16,7 @@
         <ion-label class="importantnote">Enviar UN SOLO artículo a la vez</ion-label>
       </ion-text>
     </ion-item>
-    <form [formGroup]="form">
+    <form [formGroup]="formCust">
       <ion-item>
         <ion-label position="floating">Marca</ion-label>
         <ion-input type="text" placeholder="Marca del artículo"></ion-input>
@@ -26,13 +26,37 @@
         <ion-textarea placeholder="Describa los detalles del artículo, sea conciso."></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-icon class="sendImages" name="images-outline" fill="outline" slot="start"></ion-icon>
-        <ion-button type="submit" color="danger" expand="block" (click)="upload()" slot="end">Solicitar cotización
-        </ion-button>
+        <ion-icon class="sendImages" name="images-outline" fill="outline" slot="start" (click)="upload()"></ion-icon>
+        <ion-button type="submit" color="danger" expand="block" (click)="requestQuote()" slot="end">Solicitar cotización</ion-button>
       </ion-item>
     </form>
-    <!-- formControlName = "user" -->
+    </ion-card> -->
 
-    <!-- foto, marca articulodescripcion  -->
+    
+     <!--Admin Only  -->
+    <ion-card>
+      <ion-item>
+        <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+        <ion-label>Cotización #</ion-label>
+      </ion-item>
+    <form [formGroup]="formAdm">
+      <ion-item>
+        <ion-label position="floating">Marca</ion-label>
+        <ion-input type="text" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea disabled></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Comentarios adicionales</ion-label>
+        <ion-textarea placeholder="Detalles/Observaciones"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Costo"></ion-input>
+        <ion-icon class="downloadImages" name="download-outline" fill="outline" slot="start" (click)="upload()"></ion-icon>
+      </ion-item>
+      <ion-button type="submit" color="danger" expand="block" (click)="responseQuote()" slot="end">Responder cotización</ion-button>
+    </form>
   </ion-card>
 </ion-content>

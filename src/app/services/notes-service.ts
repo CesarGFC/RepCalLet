@@ -12,8 +12,8 @@ export class notesService {
   constructor(private HttpClient:HttpClient) { 
 
   }
-  getNotes():Observable<INotes[]>{
-    return this.HttpClient.get(this.base + "notes") as any
+  getNotes(param=false):Observable<INotes[]>{
+    return this.HttpClient.get(this.base + "notes"+ "?delivered="+param) as any
   }
   getById(noteid:string):Observable<INotes>{
     return this.HttpClient.get(this.base + "notes"+'/'+noteid) as any

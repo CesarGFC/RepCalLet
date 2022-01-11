@@ -9,6 +9,7 @@
 
 <ion-content>
   <ion-card>
+    <ion-searchbar placeholder="YYYY/MM/DD o empleado" inputmode="" type="" (ionChange)="onSearch($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
     <ion-grid class="ion-text-center">
       <ion-row class="table-headers">
         <ion-col>

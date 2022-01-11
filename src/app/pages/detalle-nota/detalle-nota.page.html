@@ -19,38 +19,34 @@
     </ion-item>
     <ion-item>
       <ion-icon class="detalleNota" name="calendar-outline" slot="start"></ion-icon>
-      <ion-label>{{note.fecha_llegada}}</ion-label>
+      <ion-label slot= "start">{{note.fecha_llegada}}</ion-label>
     </ion-item>
     <ion-item>
       <ion-icon class="detalleNota" name="cash-outline" slot="start"></ion-icon>
-      <ion-label>Anticipo: ${{note.anticipo}}</ion-label>
+      <ion-label slot="start">Ant ${{note.anticipo}}</ion-label>
+      <ion-icon class="detalleNota" name="remove-outline" slot="start"></ion-icon>
+      <ion-label>Desc ${{note.descuento}}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-icon class="detalleNota" name="remove-circle-outline" slot="start"></ion-icon>
-      <ion-label>Descuento: ${{note.descuento}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Abono:</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-icon class="detalleNota" name="cash-outline" slot="start"></ion-icon>
-      <ion-label>Cantidad ${{note.abonos.cantidad}}</ion-label>
-    </ion-item>
-    <ion-item>
+    <ion-card-content *ngFor="let abono of note?.abonos">
+    <ion-item >
+      <ion-label slot="start">Abono ${{abono.cantidad}}</ion-label>
       <ion-icon class="detalleNota" name="calendar-outline" slot="start"></ion-icon>
-      <ion-label>{{note.abonos.fecha}}</ion-label>
+      <ion-label>{{abono.fecha}}</ion-label>
     </ion-item>
+  </ion-card-content>
   </ion-card>
   
   <ion-card *ngFor="let articulo of note?.articulos">
     <ion-item>
-      <ion-label>{{articulo.nombre}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="color-palette-outline" slot="start"></ion-icon>
-      <ion-label slot="start">{{articulo.color}}</ion-label>
+      <ion-label class= "obj-title" slot="start">{{articulo.nombre}}</ion-label>
       <ion-icon name="cube-outline" slot="start"></ion-icon>
       <ion-label>{{articulo.cantidad}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="man-outline" slot="start"></ion-icon>
+      <ion-label slot="start">{{articulo.tipo_usuario}}</ion-label>
+      <ion-icon name="color-palette-outline" slot="start"></ion-icon>
+      <ion-label>{{articulo.color}}</ion-label>
     </ion-item>
     <ion-item>
       <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
