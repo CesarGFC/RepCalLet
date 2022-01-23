@@ -10,28 +10,38 @@ import { toastService } from 'src/app/services/toast.service';
   styleUrls: ['./ventas.page.scss'],
 })
 export class VentasPage implements OnInit {
-  sales:Array<ISales>=[]
-  textoBuscar=''
-  constructor(private salesService:salesService,  private toastService:toastService) { 
+  sales: Array<ISales> = []
+  textoBuscar = ''
+  constructor(private salesService: salesService, private toastService: toastService) {
   }
 
   ngOnInit() {
   }
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.getData()
   }
-  getDataAll(productos:Array<IProducts>){
-    return productos.reduce((acum,item)=>acum+item.cantidad,0)
+  getDataAll(productos: Array<IProducts>) {
+    return productos.reduce((acum, item) => acum + item.cantidad, 0)
   }
-  async getData(){
+  async getData() {
     try {
       this.sales = await this.salesService.getSales().toPromise()
-      console.log(this.sales)
+      this.sales = this.sales.map(x => ({
+        ...x, show: true
+      }))
+      this.textoBuscar=""
     } catch (error) {
       this.toastService.catchError(error)
     }
   }
-  onSearch(event){
-    this.textoBuscar=event.detail.value;
+  onSearch(event) {
+    const query = this.textoBuscar.toLowerCase();
+    requestAnimationFrame(() => {
+      this.sales.forEach((item) => {
+        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1;
+        item.show = shouldShow;
+        console.log(this.textoBuscar)
+      });
+    });
   }
 }

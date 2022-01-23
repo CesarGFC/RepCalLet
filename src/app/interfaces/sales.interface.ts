@@ -12,4 +12,5 @@ export interface ISales{
         tam:string;
     }],
     venta_id:string;
+    [key:string]:any
 }

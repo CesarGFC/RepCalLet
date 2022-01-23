@@ -18,6 +18,7 @@ export interface INotes{
         corteCaja_id: string,
         fecha: string
     }]
+    [key:string]:any
 }
 export interface IArticulo {
     articulo_id: string,
@@ -46,5 +47,6 @@ export interface IArticulo {
     reparaciones_id: [{
         type: string
     }],
-    tipo_usuario: string,
+    tipo_usuario: string;
+
 }

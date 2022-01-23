@@ -8,8 +8,9 @@
 </ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="YYYY/MM/DD" inputmode="" type="" (ionChange)="onSearch($event)" [debounce]="250" showCancelButton="always" ></ion-searchbar>
-  <ion-card class="card" *ngFor="let sale of sales">          <!-- filtro:textoBuscar='fecha'-->
+  <ion-searchbar placeholder="YYYY/MM/DD" inputmode="" type="" (ionInput)="onSearch($event)" [(ngModel)]="textoBuscar" [debounce]="250" showCancelButton="always" ></ion-searchbar>
+<ng-container *ngFor="let sale of sales">
+  <ion-card class="card" *ngIf="sale.show">
     <ion-card-header>
       <ion-item>
         <ion-icon name="calendar-outline" slot="start"></ion-icon>
@@ -22,4 +23,5 @@
       <ion-label>{{getDataAll(sale.productos)}} producto(s)</ion-label>
     </ion-item>
   </ion-card>
+</ng-container>
 </ion-content>
