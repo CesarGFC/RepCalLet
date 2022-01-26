@@ -7,4 +7,5 @@ export interface ICashcut{
     usuario_id:string;
     comentarios:string;
     corte_caja_id:string;
+    [key:string]:any
 }

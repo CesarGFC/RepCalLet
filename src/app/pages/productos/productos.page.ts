@@ -11,6 +11,7 @@ import { toastService } from 'src/app/services/toast.service';
   styleUrls: ['./productos.page.scss'],
 })
 export class ProductosPage implements OnInit {
+  textoBuscar=''
   products:Array<IProducts>=[]
   constructor(private productsService:ProductsService, private toastService:toastService, private GlobalStateService:GlobalStateService) { }
   isAdmin(){
@@ -27,9 +28,21 @@ export class ProductosPage implements OnInit {
   async getDataProduct(){
     try{
       this.products=await this.productsService.getProducts().toPromise()
-      console.log(this.products)
+      this.products = this.products.map(x => ({
+        ...x, show: true
+      }))
+      this.textoBuscar=""
     }catch(error){
       this.toastService.catchError(error)
     }
+  }
+  onSearch(event) {
+    const query= event.target.value.toLowerCase()
+    requestAnimationFrame(() => {
+      this.products.forEach((item) => {
+        const shouldShow = item.categoria.toLowerCase().indexOf(query) > -1;
+        item.show = shouldShow;
+      });
+    });
   }
 }

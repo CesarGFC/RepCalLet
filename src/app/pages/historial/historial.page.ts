@@ -12,6 +12,7 @@ import { toastService } from 'src/app/services/toast.service';
 })
 export class HistorialPage implements OnInit {
   notes: Array<INotes> = []
+  textoBuscar=''
   constructor(private notesService: notesService, private toastService: toastService, private globalStateService: GlobalStateService) {
   }
   ngOnInit() {
@@ -32,11 +33,22 @@ export class HistorialPage implements OnInit {
   async getData() {
     try {
       this.notes = await this.notesService.getNotes(true).toPromise()
-      this.notes=this.notes.map(note=>({
-        ...note, articulos:note.articulos.filter(articulo=>articulo.estado.nombre=="Entregado")
+      this.notes = this.notes.map(note => ({
+        ...note, show:true, articulos: note.articulos.filter(articulo => articulo.estado.nombre == "Entregado")
       }))
+      this.textoBuscar=""
     } catch (error) {
       this.toastService.catchError(error)
     }
+  }
+  onSearch(event) {
+    const query = event.target.value.toLowerCase()
+    requestAnimationFrame(() => {
+      this.notes.forEach((item) => {
+        const shouldShow = item.fecha_llegada.toLowerCase().indexOf(query) > -1 || item.numero.toString().toLowerCase().indexOf(query) > -1 ||
+        item.cliente.nombre.toLowerCase().indexOf(query) > -1;
+        item.show = shouldShow;
+      });
+    });
   }
 }

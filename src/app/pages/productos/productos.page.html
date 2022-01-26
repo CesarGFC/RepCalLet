@@ -2,19 +2,21 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>  
+    </ion-buttons>
     <ion-title>
       Productos
     </ion-title>
   </ion-toolbar>
-  </ion-header>
+</ion-header>
 <!-- <ion-header-bar class="bar-stable"> -->
 <ion-content [fullscreen]="true">
-  <ion-searchbar placeholder="Categoría" inputmode="" type="" (ionChange)="onSearch($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
-  <ion-card class="card" *ngFor="let product of products">
-    <ion-card-header>
-      <ion-card-title class="title"> {{product.categoria}}</ion-card-title>
-    </ion-card-header>
+  <ion-searchbar placeholder="Categoría" inputmode="" type="" (ionInput)="onSearch($event)" [(ngModel)]="textoBuscar" [debounce]="250"
+    showCancelButton="always"></ion-searchbar>
+  <ng-container *ngFor="let product of products">
+    <ion-card class="card" *ngIf="product.show">
+      <ion-card-header>
+        <ion-card-title class="title"> {{product.categoria}}</ion-card-title>
+      </ion-card-header>
       <ion-item>
         <ion-label>{{product.nombre}}</ion-label>
       </ion-item>
@@ -30,5 +32,6 @@
         <ion-icon name="cube-outline" slot="start" *ngIf="isAdmin()"></ion-icon>
         <ion-label *ngIf="isAdmin()">{{product.cantidad}} ud(s)</ion-label>
       </ion-item>
-  </ion-card>
+    </ion-card>
+  </ng-container>
 </ion-content>

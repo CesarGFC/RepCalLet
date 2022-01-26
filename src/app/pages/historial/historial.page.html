@@ -8,10 +8,11 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-card>
-    <ion-searchbar placeholder="YYYY/MM/DD, # Nota, cliente" inputmode="" type="" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+    <ion-searchbar [placeholder]="isAdmin()?'YYYY/MM/DD, # Nota, cliente':'YYYY/MM/DD, # Nota'" inputmode="" type=""
+      (ionInput)="onSearch($event)" [(ngModel)]="textoBuscar" [debounce]="250" showCancelButton="always">
+    </ion-searchbar>
     <ion-grid class="ion-text-center">
       <ion-row class="table-headers">
         <ion-col>
@@ -27,22 +28,25 @@
           <ion-text>Artículos</ion-text>
         </ion-col>
       </ion-row>
-      <ion-row class="table-rows" *ngFor='let note of notes'>
-        <ion-col>
-          <ion-text>{{note.numero}}</ion-text>
-        </ion-col>
-        <ion-col>
-          <ion-text>{{note.fecha_llegada}}</ion-text>
-        </ion-col>
-        <ion-col>
-          <ion-text *ngIf="isAdmin()">{{note.cliente.nombre}}</ion-text>
-        </ion-col>
-        <ion-col>
-          <ion-item *ngFor="let articulo of note?.articulos">
-            <ion-text>{{articulo.nombre}} {{articulo.tipo_usuario}} {{articulo.color}} {{articulo.marca}} ------------------</ion-text>
-          </ion-item>
-        </ion-col>
-      </ion-row>
+      <ng-container *ngFor='let note of notes'>
+        <ion-row class="table-rows" ngIf="note.show">
+          <ion-col>
+            <ion-text>{{note.numero}}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text>{{note.fecha_llegada}}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text *ngIf="isAdmin()">{{note.cliente.nombre}}</ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-item *ngFor="let articulo of note?.articulos">
+              <ion-text>{{articulo.nombre}} {{articulo.tipo_usuario}} {{articulo.color}} {{articulo.marca}}
+                ------------------</ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ng-container>
     </ion-grid>
   </ion-card>
 </ion-content>

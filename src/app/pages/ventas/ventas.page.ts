@@ -35,12 +35,11 @@ export class VentasPage implements OnInit {
     }
   }
   onSearch(event) {
-    const query = this.textoBuscar.toLowerCase();
+    const query= event.target.value.toLowerCase()
     requestAnimationFrame(() => {
       this.sales.forEach((item) => {
         const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1;
         item.show = shouldShow;
-        console.log(this.textoBuscar)
       });
     });
   }

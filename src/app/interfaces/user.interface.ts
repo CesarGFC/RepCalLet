@@ -6,5 +6,6 @@ export interface IUser {
     correo:string,
     contrasena:string,
     rol_id:string,
-    turno:string
+    turno:string,
+    [key:string]:any
 }

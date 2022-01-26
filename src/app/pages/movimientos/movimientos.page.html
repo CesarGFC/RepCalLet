@@ -9,7 +9,8 @@
 
 <ion-content>
   <ion-card>
-    <ion-searchbar placeholder="YYYY/MM/DD o empleado" inputmode="" type="" (ionChange)="onSearch($event)" [debounce]="250" showCancelButton="always"></ion-searchbar>
+    <ion-searchbar placeholder="YYYY/MM/DD o empleado" inputmode="" type="" (ionInput)="onSearch($event)"
+      [(ngModel)]="textoBuscar" [debounce]="250" showCancelButton="always"></ion-searchbar>
     <ion-grid class="ion-text-center">
       <ion-row class="table-headers">
         <ion-col>
@@ -22,17 +23,21 @@
           <ion-text>Movimiento</ion-text>
         </ion-col>
       </ion-row>
-      <ion-row class="table-rows" *ngFor='let movement of movements'>
-        <ion-col>
-          <ion-text>{{movement.fecha}}</ion-text>
-        </ion-col>
-        <ion-col>
-          <ion-text>{{movement.usuario_id.nombre}}</ion-text>
-        </ion-col>
-        <ion-col>
-          <ion-text>{{movement.descripcion}}</ion-text>
-        </ion-col>
-      </ion-row>
+      <ng-container *ngFor='let movement of movements'>
+        <!-- <ng-container *ngFor='let user of users'> -->
+          <ion-row class="table-rows" *ngIf="movement.show || user.show">
+            <ion-col>
+              <ion-text>{{movement.fecha}}</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{movement.usuario_id.nombre}}</ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>{{movement.descripcion}}</ion-text>
+            </ion-col>
+          </ion-row>
+        <!-- </ng-container> -->
+      </ng-container>
     </ion-grid>
   </ion-card>
 </ion-content>

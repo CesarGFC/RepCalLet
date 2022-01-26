@@ -7,4 +7,5 @@ export interface IProducts{
     precio:number;
     producto_id:string;
     tam:string
+    [key:string]:any
 }

@@ -49,8 +49,6 @@ export class NotesPage implements OnInit{
       this.notes.forEach((item) => {
         const shouldShow = item.fecha_llegada.toLowerCase().indexOf(query) > -1 || item.numero.toString().indexOf(query) > -1 || item.cliente.nombre.toLowerCase().indexOf(query) > -1;;
         item.show = shouldShow;
-        console.log(query)
-        console.log(item)
       });
     });
   }

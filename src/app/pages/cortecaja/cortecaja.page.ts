@@ -10,6 +10,7 @@ import { toastService } from 'src/app/services/toast.service';
 })
 export class CortecajaPage implements OnInit {
   cashcuts:Array<ICashcut>=[]
+  textoBuscar=""
   constructor(private cashcutService:CashcutsService, private toastService:toastService) { }
 
   ngOnInit() {
@@ -20,9 +21,22 @@ export class CortecajaPage implements OnInit {
   async getDataCashcut(){
     try {
       this.cashcuts = await this.cashcutService.getCashcuts().toPromise()
-      console.log(this.cashcuts)
+      this.cashcuts = this.cashcuts.map(x => ({
+        ...x, show: true
+      }))
+      this.textoBuscar=""
+      
     } catch (error) {
       this.toastService.catchError(error)
     }
+  }
+  onSearch(event) {
+    const query= event.target.value.toLowerCase()
+    requestAnimationFrame(() => {
+      this.cashcuts.forEach((item) => {
+        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1;
+        item.show = shouldShow;
+      });
+    });
   }
 }
