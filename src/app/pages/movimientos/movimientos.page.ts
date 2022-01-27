@@ -14,7 +14,7 @@ export class MovimientosPage implements OnInit {
   movements: Array<IMovements> = []
   users: Array<IUser> = []
   textoBuscar = ''
-  constructor(private movementsService: movementsService, private userService: UserService, private toastService: toastService) { }
+  constructor(private movementsService: movementsService, private toastService: toastService) { }
 
   ngOnInit() {
   }
@@ -27,14 +27,6 @@ export class MovimientosPage implements OnInit {
       this.movements = this.movements.map(x => ({
         ...x, show: true
       }))
-      try {
-        this.users = await this.userService.getEmployees().toPromise()
-        this.users = this.users.map(y => ({
-          ...y, show: true
-        }))
-      } catch (error) {
-        this.toastService.catchError(error)
-      }
     }
     catch (error) {
       this.toastService.catchError(error)
@@ -44,11 +36,9 @@ export class MovimientosPage implements OnInit {
     const query = event.target.value.toLowerCase()
     requestAnimationFrame(() => {
       this.movements.forEach((item) => {
-        this.users.forEach((item2) => {
-        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1|| item2.nombre.toLowerCase().indexOf(query) > -1
+        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1 || item.usuario_id.nombre.toLowerCase().indexOf(query) > -1
         item.show = shouldShow;
-         });
-      })
+      });
     });
   }
 }

@@ -29,15 +29,15 @@
         </ion-col>
       </ion-row>
       <ng-container *ngFor='let note of notes'>
-        <ion-row class="table-rows" ngIf="note.show">
+        <ion-row class="table-rows" *ngIf="note.show">
           <ion-col>
             <ion-text>{{note.numero}}</ion-text>
           </ion-col>
           <ion-col>
             <ion-text>{{note.fecha_llegada}}</ion-text>
           </ion-col>
-          <ion-col>
-            <ion-text *ngIf="isAdmin()">{{note.cliente.nombre}}</ion-text>
+          <ion-col *ngIf="isAdmin()">
+            <ion-text>{{note.cliente.nombre}}</ion-text>
           </ion-col>
           <ion-col>
             <ion-item *ngFor="let articulo of note?.articulos">
