@@ -3,7 +3,6 @@ import { IMovements } from 'src/app/interfaces/movements.interface';
 import { IUser } from 'src/app/interfaces/user.interface';
 import { movementsService } from 'src/app/services/movements.service';
 import { toastService } from 'src/app/services/toast.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-movimientos',
