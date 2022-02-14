@@ -36,7 +36,8 @@ export class MovimientosPage implements OnInit {
     const query = event.target.value.toLowerCase()
     requestAnimationFrame(() => {
       this.movements.forEach((item) => {
-        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1 || item.usuario_id.nombre.toLowerCase().indexOf(query) > -1
+        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1 
+        || item.usuario_id.nombre.toLowerCase().indexOf(query) > -1
         item.show = shouldShow;
       });
     });

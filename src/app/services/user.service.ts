@@ -20,6 +20,12 @@ export class UserService {
   getEmployees():Observable<Array<IUser>>{
     return this.HttpClient.get(this.base+ "users/empleados") as any
   }
+  getMyAccount():Observable<Array<IUser>>{
+    return this.HttpClient.get(this.base+ "users/micuenta") as any
+  }
+  updateChanges(usuario){
+    return this.HttpClient.put(this.base+"users/cambiardatos", usuario) as any
+  }
   recoveryPass(correo:string){
     return this.HttpClient.post(this.base + "users/recovery-password",{
       correo

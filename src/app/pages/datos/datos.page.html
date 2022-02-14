@@ -8,35 +8,35 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="form">
     <ion-item lines="full">
-      <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" formControlName = "usuario" required></ion-input>
     </ion-item>
     
     <ion-item lines="full">
       <ion-label position="floating">Teléfono (10 dígitos)</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" formControlName= "telefono" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
-      <ion-label position="floating">Teléfono 2 (10 dígitos)</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-label position="floating">Contraseña actual</ion-label>
+      <ion-input type="password" formControlName= "contrasena" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Nueva contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName= "ncontrasena" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Confirmar contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName= "nccontrasena"required></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block">Guardar cambios</ion-button>
+        <ion-button type="submit" expand="block" (click)="setDataChanges()">Guardar cambios</ion-button>
         <ion-button type="submit" color="danger" expand="block">Cancelar</ion-button>
       </ion-col>
     </ion-row>

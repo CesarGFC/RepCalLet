@@ -12,7 +12,8 @@ import { QuotesService } from 'src/app/services/quotes.service';
 })
 export class CotizacionesPage implements OnInit {
   formCust:FormGroup;
-  constructor(private globalStateService:GlobalStateService, private toastService:toastService, private quotesService:QuotesService) { 
+  constructor(private globalStateService:GlobalStateService, 
+    private toastService:toastService, private quotesService:QuotesService) { 
     this.formCust=new FormGroup({
       marca:new FormControl(null,Validators.required),
       desc:new FormControl(null,Validators.required),

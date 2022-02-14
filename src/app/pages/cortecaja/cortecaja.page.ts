@@ -34,7 +34,8 @@ export class CortecajaPage implements OnInit {
     const query= event.target.value.toLowerCase()
     requestAnimationFrame(() => {
       this.cashcuts.forEach((item) => {
-        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1 || item.usuario_id?.nombre.toLowerCase().indexOf(query) > -1;
+        const shouldShow = item.fecha.toLowerCase().indexOf(query) > -1 
+        || item.usuario_id?.nombre.toLowerCase().indexOf(query) > -1;
         item.show = shouldShow;
       });
     });

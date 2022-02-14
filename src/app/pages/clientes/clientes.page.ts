@@ -32,7 +32,9 @@ export class ClientesPage implements OnInit {
     const query= event.target.value.toLowerCase()
     requestAnimationFrame(() => {
       this.customers.forEach((item) => {
-        const shouldShow = item.nombre.toLowerCase().indexOf(query) > -1 || item.telefono1.toLowerCase().indexOf(query) > -1 || item.telefono2.toLowerCase().indexOf(query) > -1;
+        const shouldShow = item.nombre.toLowerCase().indexOf(query) > -1 
+        || item.telefono1?.toLowerCase().indexOf(query) > -1 
+        || item.telefono2?.toLowerCase().indexOf(query) > -1;
         item.show = shouldShow;
       });
     });
